@@ -6,77 +6,74 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
 
-public class C04_TekDriverKullanma {
-    WebDriver driver;
+    public class C04_TekDriverKullanma {
+        WebDriver driver;
 
-    public void setUpMethodu(){
-         driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        driver.manage().window().maximize();
-
-    }
-    @Test
-    public void testOtomasyonuTesti(){
-        setUpMethodu();
-        // test otomasyonu sitesine gidin
-        // url'in test otomasyonu icerdigini test edin
-
-        driver.get("https://testotomasyonu.com");
-
-        String actualUrl = driver.getCurrentUrl();
-        String expectedUrlIcerik = "testotomasyonu";
-
-        if (actualUrl.contains(expectedUrlIcerik)){
-            System.out.println("testotomasyonu test passed");
-        }else {
-            System.out.println("testotomasyonu test faild");
+        public void setUp(){
+             driver = new ChromeDriver();
+            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+            driver.manage().window().maximize();
         }
-        throw new AssertionError("url testotomasyonu icermiyor");
+        @Test
+        public void testOtomasyonuTesti(){
+            setUp();
 
-    }
+            // test otomasyonu sitesine gidin
+            driver.get("https://testotomasyonu.com");
 
-    @Test
-    public void wisequarterTesti(){
-        setUpMethodu();
-        // wisequarter sitesine gidin
-        // title icerdigini test edin
+            // url'in test otomasyonu icerdigini test edin
+            String actualUrl = driver.getCurrentUrl();
+            String expectedUrlIcerik = "testotomasyonu";
 
-        driver.get("https://wisequarter.com");
+            if (actualUrl.contains(expectedUrlIcerik)){
+                System.out.println("testotomasyonu test passed");
+            }else {
+                System.out.println("testotomasyonu test faild");
+                throw new AssertionError("Url 'test otomasyonu' icermiyor");
+            }
+            driver.quit();
 
-        String actualUrl = driver.getCurrentUrl();
-        String expectedUrlIcerik = "Wise Quarter";
-
-        if (actualUrl.contains(expectedUrlIcerik)){
-            System.out.println("Wise Quarter test passed");
-        }else {
-            System.out.println("Wise Quarter test faild");
         }
-        throw new AssertionError("url Wise Quarter icermiyor");
 
+        @Test
+        public void wisequarterTesti(){
+            setUp();
 
+            // wisequarter sitesine gidin
+            driver.get("https://wisequarter.com");
 
+            // title icerdigini test edin
+            String actualUrl = driver.getTitle();
+            String expectedTitleIcerik = "Wise Quarter";
 
-
-    }
-
-    @Test
-    public void youtubeTesti(){
-        setUpMethodu();
-        // youtube ana sayfaya gidin
-        // title youtube ildugunu test edin
-
-        driver.get("https://youtube.com");
-
-        String actualUrl = driver.getTitle();
-        String expectedUrlIcerik = "Youtube";
-
-        if (actualUrl.equals(expectedUrlIcerik)){
-            System.out.println("Wise Quarter test passed");
-        }else {
-            System.out.println("Wise Quarter test faild");
+            if (actualUrl.contains(expectedTitleIcerik)){
+                System.out.println("Wise Quarter test passed");
+            }else {
+                System.out.println("Wise Quarter test faild");
+                throw new AssertionError("Title 'Wise Quarter' degil");
+            }
+            driver.quit();
         }
-        throw new AssertionError("url Youtube icermiyor");
+
+        @Test
+        public void youtubeTesti(){
+            setUp();
+
+            // youtube ana sayfaya gidin
+            driver.get("https://www.youtube.com/");
+
+            // title youtube ildugunu test edin
+            String actualTitle = driver.getTitle();
+            String expectedUrlIcerik = "Youtube";
+
+            if (actualTitle.equals(expectedUrlIcerik)){
+                System.out.println("Youtube test passed");
+            }else {
+                System.out.println("Youtube test faild");
+                throw new AssertionError("Title 'youtube' degil");
+            }
+            driver.quit();
 
 
-    }
+        }
 }

@@ -5,9 +5,9 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import java.time.Duration;
+    import java.time.Duration;
 
-public class C02_ifElseIleTest {
+    public class C02_ifElseIleTest {
     // junit calistirilan test sonuclarini otomatik olarak yorumlar
     // ancak bir test methodunun passed veya faild olduguna kodlarin sorunsuz olarak calisip
     // bitmesine gore karar verir, kodlar sorunsuz calisti ve bittiyse o zaman test passed
@@ -61,11 +61,6 @@ public class C02_ifElseIleTest {
             System.out.println("Wise Quarter test faild");
         }
         driver.quit();
-
-
-
-
-
     }
 
     @Test
@@ -77,16 +72,16 @@ public class C02_ifElseIleTest {
         driver.manage().window().maximize();
 
         // youtube ana sayfaya gidin
-        driver.get("https://youtube.com");
+        driver.get("https://www.youtube.com/");
 
         // title youtube ildugunu test edin
         String actualTitle = driver.getTitle();
         String expectedUrlIcerik = "Youtube";
 
         if (actualTitle.equals(expectedUrlIcerik)){
-            System.out.println("Wise Quarter test passed");
+            System.out.println("Youtube test passed");
         }else {
-            System.out.println("Wise Quarter test faild");
+            System.out.println("Youtube test faild");
         }
         driver.quit();
 

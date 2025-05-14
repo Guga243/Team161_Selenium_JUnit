@@ -19,7 +19,7 @@ public class C01_TestNotasyonu {
 
     @Test @Disabled
     public void test01(){
-        System.out.println("test 1 calisti");
+        System.out.println("test 1 calistii");
     }
 
     @Test

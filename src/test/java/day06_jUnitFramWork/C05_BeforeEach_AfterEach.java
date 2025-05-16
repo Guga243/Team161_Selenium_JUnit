@@ -1,22 +1,44 @@
-package tests.day06_jUnitFramWork;
+package day06_jUnitFramWork;
 
-import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
 
-public class C03_OtomatikSonucRaporlama {
+public class C05_BeforeEach_AfterEach {
 
+    /*
+    test methodlarinda driver objesini sorunsuz kullabilmesi icin
+    oncelikle mutlaka setUp () calismalidir
 
+    Junit methodcall'a ihtiyac duymadan test method'lari icin gerekli on ayarlamalari
+    yaptigimiz setUp() otomatik calistir
 
+    bunun icin @Before .. nottasyonlarini kullaniriiz
+
+    @BeforeEach her methoddan once
+    @BeforeAll tum methodlardan once calisir, ornegin 3 method varsa hepsinden once setup calisir
+
+     */
+
+    WebDriver driver;
+
+    @BeforeEach
+    public void setUp(){
+        driver = new ChromeDriver();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        driver.manage().window().maximize();
+    }
+    @AfterEach
+    public void tearDown(){
+        driver.quit();
+    }
     @Test
     public void testOtomasyonuTesti(){
 
-        WebDriver driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        driver.manage().window().maximize();
 
         // test otomasyonu sitesine gidin
         driver.get("https://testotomasyonu.com");
@@ -31,16 +53,13 @@ public class C03_OtomatikSonucRaporlama {
             System.out.println("testotomasyonu test faild");
             throw new AssertionError("Url 'test otomasyonu' icermiyor");
         }
-        driver.quit();
+
 
     }
 
     @Test
     public void wisequarterTesti(){
 
-        WebDriver driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        driver.manage().window().maximize();
 
         // wisequarter sitesine gidin
         driver.get("https://wisequarter.com");
@@ -55,16 +74,12 @@ public class C03_OtomatikSonucRaporlama {
             System.out.println("Wise Quarter test faild");
             throw new AssertionError("Title 'Wise Quarter' degil");
         }
-        driver.quit();
+
     }
 
     @Test
     public void youtubeTesti(){
 
-
-        WebDriver driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        driver.manage().window().maximize();
 
         // youtube ana sayfaya gidin
         driver.get("https://www.youtube.com/");
@@ -79,8 +94,10 @@ public class C03_OtomatikSonucRaporlama {
             System.out.println("Youtube test faild");
             throw new AssertionError("Title 'youtube' degil");
         }
-        driver.quit();
+
 
 
     }
 }
+
+

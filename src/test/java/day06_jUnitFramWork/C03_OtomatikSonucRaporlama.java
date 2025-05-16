@@ -1,22 +1,14 @@
-package tests.day06_jUnitFramWork;
+package day06_jUnitFramWork;
 
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-    import java.time.Duration;
+import java.time.Duration;
 
-    public class C02_ifElseIleTest {
-    // junit calistirilan test sonuclarini otomatik olarak yorumlar
-    // ancak bir test methodunun passed veya faild olduguna kodlarin sorunsuz olarak calisip
-    // bitmesine gore karar verir, kodlar sorunsuz calisti ve bittiyse o zaman test passed
-    // kodlar calisirken sorun olursa kodlar calismazsa test faild olur
+public class C03_OtomatikSonucRaporlama {
 
-    // if else ile test yapiyorsak
-    // faild oldugunda kodun calismasini durdurmak icin
-    // exeption firlatiriz
-    // c03 de devami
+
 
     @Test
     public void testOtomasyonuTesti(){
@@ -36,6 +28,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
             System.out.println("testotomasyonu test passed");
         }else {
             System.out.println("testotomasyonu test faild");
+            throw new AssertionError("Url 'test otomasyonu' icermiyor");
         }
         driver.quit();
 
@@ -59,6 +52,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
             System.out.println("Wise Quarter test passed");
         }else {
             System.out.println("Wise Quarter test faild");
+            throw new AssertionError("Title 'Wise Quarter' degil");
         }
         driver.quit();
     }
@@ -82,6 +76,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
             System.out.println("Youtube test passed");
         }else {
             System.out.println("Youtube test faild");
+            throw new AssertionError("Title 'youtube' degil");
         }
         driver.quit();
 

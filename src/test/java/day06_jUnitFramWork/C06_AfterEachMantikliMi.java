@@ -1,4 +1,4 @@
-package tests.day06_jUnitFramWork;
+package day06_jUnitFramWork;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;

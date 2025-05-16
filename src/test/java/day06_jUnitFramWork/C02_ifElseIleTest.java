@@ -1,44 +1,28 @@
-package tests.day06_jUnitFramWork;
+package day06_jUnitFramWork;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import java.time.Duration;
+    import java.time.Duration;
 
-public class C05_BeforeEach_AfterEach {
+    public class C02_ifElseIleTest {
+    // junit calistirilan test sonuclarini otomatik olarak yorumlar
+    // ancak bir test methodunun passed veya faild olduguna kodlarin sorunsuz olarak calisip
+    // bitmesine gore karar verir, kodlar sorunsuz calisti ve bittiyse o zaman test passed
+    // kodlar calisirken sorun olursa kodlar calismazsa test faild olur
 
-    /*
-    test methodlarinda driver objesini sorunsuz kullabilmesi icin
-    oncelikle mutlaka setUp () calismalidir
+    // if else ile test yapiyorsak
+    // faild oldugunda kodun calismasini durdurmak icin
+    // exeption firlatiriz
+    // c03 de devami
 
-    Junit methodcall'a ihtiyac duymadan test method'lari icin gerekli on ayarlamalari
-    yaptigimiz setUp() otomatik calistir
-
-    bunun icin @Before .. nottasyonlarini kullaniriiz
-
-    @BeforeEach her methoddan once
-    @BeforeAll tum methodlardan once calisir, ornegin 3 method varsa hepsinden once setup calisir
-
-     */
-
-    WebDriver driver;
-
-    @BeforeEach
-    public void setUp(){
-        driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        driver.manage().window().maximize();
-    }
-    @AfterEach
-    public void tearDown(){
-        driver.quit();
-    }
     @Test
     public void testOtomasyonuTesti(){
 
+        WebDriver driver = new ChromeDriver();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        driver.manage().window().maximize();
 
         // test otomasyonu sitesine gidin
         driver.get("https://testotomasyonu.com");
@@ -51,15 +35,17 @@ public class C05_BeforeEach_AfterEach {
             System.out.println("testotomasyonu test passed");
         }else {
             System.out.println("testotomasyonu test faild");
-            throw new AssertionError("Url 'test otomasyonu' icermiyor");
         }
-
+        driver.quit();
 
     }
 
     @Test
     public void wisequarterTesti(){
 
+        WebDriver driver = new ChromeDriver();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        driver.manage().window().maximize();
 
         // wisequarter sitesine gidin
         driver.get("https://wisequarter.com");
@@ -72,14 +58,17 @@ public class C05_BeforeEach_AfterEach {
             System.out.println("Wise Quarter test passed");
         }else {
             System.out.println("Wise Quarter test faild");
-            throw new AssertionError("Title 'Wise Quarter' degil");
         }
-
+        driver.quit();
     }
 
     @Test
     public void youtubeTesti(){
 
+
+        WebDriver driver = new ChromeDriver();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        driver.manage().window().maximize();
 
         // youtube ana sayfaya gidin
         driver.get("https://www.youtube.com/");
@@ -92,12 +81,9 @@ public class C05_BeforeEach_AfterEach {
             System.out.println("Youtube test passed");
         }else {
             System.out.println("Youtube test faild");
-            throw new AssertionError("Title 'youtube' degil");
         }
-
+        driver.quit();
 
 
     }
 }
-
-

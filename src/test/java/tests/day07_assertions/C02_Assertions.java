@@ -1,4 +1,4 @@
-package day07_assertions;
+package tests.day07_assertions;
 
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Assertions;

@@ -1,4 +1,4 @@
-package day07_assertions;
+package tests.day07_assertions;
 
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;

@@ -1,4 +1,4 @@
-package day07_assertions;
+package tests.day07_assertions;
 
 public class C04_CheckBoxKullanimi {
 

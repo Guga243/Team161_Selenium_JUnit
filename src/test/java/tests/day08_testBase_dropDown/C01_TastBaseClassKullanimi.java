@@ -1,4 +1,4 @@
-package day08_testBase_dropDown;
+package tests.day08_testBase_dropDown;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

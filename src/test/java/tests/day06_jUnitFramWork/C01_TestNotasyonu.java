@@ -1,4 +1,4 @@
-package day06_jUnitFramWork;
+package tests.day06_jUnitFramWork;
 
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;

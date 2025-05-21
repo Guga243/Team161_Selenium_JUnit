@@ -3,10 +3,9 @@ package tests.day08_testBase_dropDown;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
-import utilities.ResuableMethod;
+import utilities.ReusableMethods;
 import utilities.TestBase_Each;
 
 import java.util.ArrayList;
@@ -81,13 +80,13 @@ public class C02_DropDownMenu extends TestBase_Each {
         // extra gorev
         // gun dropdown menudeki tum secenekleri bir liste olarak yazdirin
        List<WebElement> gunDropDownElementleriList = selectDay.getOptions();
-       List<String> gunDropDownSecenekleriStingList = ResuableMethod.stringListeDonustur(gunDropDownElementleriList);
+       List<String> gunDropDownSecenekleriStingList = ReusableMethods.stringListeDonustur(gunDropDownElementleriList);
         System.out.println(gunDropDownSecenekleriStingList);
 
         // istersek tek satirdada yazdirabiliriz
-        System.out.println(ResuableMethod.stringListeDonustur(gunDropDownElementleriList));
+        System.out.println(ReusableMethods.stringListeDonustur(gunDropDownElementleriList));
 
-        ResuableMethod.bekle(3);
+        ReusableMethods.bekle(3);
 
     }
 

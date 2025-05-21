@@ -3,7 +3,7 @@ package tests.day10_iframe_switchingWindow;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WindowType;
-import utilities.ResuableMethod;
+import utilities.ReusableMethods;
 import utilities.TestBase_Each;
 
 public class C04_KontrolluYeniWindowOlusturma extends TestBase_Each {
@@ -19,7 +19,7 @@ public class C04_KontrolluYeniWindowOlusturma extends TestBase_Each {
         System.out.println("anasayfa  whd : "+driver.getWindowHandles()); // acik olan butun whd
 
         String birinciWindowHD = driver.getWindowHandle();
-        ResuableMethod.bekle(3);
+        ReusableMethods.bekle(3);
 
         // yeni bir tab acin
         driver.switchTo().newWindow(WindowType.TAB);
@@ -36,7 +36,7 @@ public class C04_KontrolluYeniWindowOlusturma extends TestBase_Each {
         System.out.println("elektonics  whd : "+driver.getWindowHandle());
         System.out.println("elektonics  whd : "+driver.getWindowHandles());
         String ikinciWindowHD = driver.getWindowHandle();
-        ResuableMethod.bekle(3);
+        ReusableMethods.bekle(3);
 
         // yeni bagimsiz window acip
         driver.switchTo().newWindow(WindowType.WINDOW);
@@ -48,7 +48,7 @@ public class C04_KontrolluYeniWindowOlusturma extends TestBase_Each {
         System.out.println("bestbuy  whd : "+driver.getWindowHandles());
         String ucuncuWindowHD = driver.getWindowHandle();
 
-        ResuableMethod.bekle(3);
+        ReusableMethods.bekle(3);
 
 
         // TESTOTOMASYONUN ACIK OLDUGU WINDOWA GECIS YAPIP TITLE YAZDIRIN

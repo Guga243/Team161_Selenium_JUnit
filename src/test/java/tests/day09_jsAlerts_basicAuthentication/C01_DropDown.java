@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
-import utilities.ResuableMethod;
+import utilities.ReusableMethods;
 import utilities.TestBase_Each;
 
 public class C01_DropDown extends TestBase_Each{
@@ -76,7 +76,7 @@ public class C01_DropDown extends TestBase_Each{
         driver.findElement(By.id("purchase_cash"))
                 .click();
 
-        ResuableMethod.bekle(2);
+        ReusableMethods.bekle(2);
         //13. “Foreign currency cash was successfully purchased.” yazisinin ciktigini kontrol edin.
 
         WebElement uyariYaziElementi = driver.findElement(By.id("alert_content"));

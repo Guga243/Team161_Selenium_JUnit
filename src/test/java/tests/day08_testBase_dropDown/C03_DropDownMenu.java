@@ -3,10 +3,9 @@ package tests.day08_testBase_dropDown;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
-import utilities.ResuableMethod;
+import utilities.ReusableMethods;
 import utilities.TestBase_Each;
 
 public class C03_DropDownMenu extends TestBase_Each {
@@ -32,7 +31,7 @@ public class C03_DropDownMenu extends TestBase_Each {
         System.out.println(select.getFirstSelectedOption().getText());
 
       //   4.Tüm dropdown değerleri(value) yazdırın
-        System.out.println(ResuableMethod.stringListeDonustur(select.getOptions()));
+        System.out.println(ReusableMethods.stringListeDonustur(select.getOptions()));
 
      //    5. Dropdown’un boyutunun 4 olduğunu test edin
         int expectedDorpDownBoyutu = 4;

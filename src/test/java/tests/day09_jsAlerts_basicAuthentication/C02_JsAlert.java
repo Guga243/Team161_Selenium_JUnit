@@ -4,7 +4,6 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import utilities.ResuableMethod;
 import utilities.TestBase_All;
 
 public class C02_JsAlert extends TestBase_All {

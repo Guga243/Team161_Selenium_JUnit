@@ -1,4 +1,4 @@
-package tests.day11_KontrolsuzYeniWindowKullanimi;
+package tests.day11_kontrolsuzYeniWindowKullanimi;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

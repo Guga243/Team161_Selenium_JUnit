@@ -1,8 +1,7 @@
-package tests.day11_KontrolsuzYeniWindowKullanimi;
+package tests.day11_kontrolsuzYeniWindowKullanimi;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.WindowType;
 import utilities.ReusableMethods;
 import utilities.TestBase_Each;

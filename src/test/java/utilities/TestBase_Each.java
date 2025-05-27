@@ -18,6 +18,6 @@ public class TestBase_Each {
     }
     @AfterEach
     public void tearDown(){
-        driver.quit();
+    driver.quit();
     }
 }

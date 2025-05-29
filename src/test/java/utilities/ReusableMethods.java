@@ -1,8 +1,13 @@
 package utilities;
 
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
@@ -60,6 +65,42 @@ public class ReusableMethods {
             if (hedefTitle.equals(actualTitle)){
                 break;
             }
+        }
+    }
+
+    public static void tumSayfaScreenshhot(WebDriver driver){
+        //1- obje
+        TakesScreenshot tss = (TakesScreenshot) driver;
+
+        //2- ss kaydedelim (File)
+        File file = new File("target/screenshots/tumSayfaScreenshoot.jpg");
+
+        //3- screenshootu alip gecici dosyaya kaydedn
+        File geciciResim = tss.getScreenshotAs(OutputType.FILE);
+
+        //4- Gecici resim dosyasini asil kaydetmek istedigimiz file'a kopyalayalim
+        try {
+            FileUtils.copyFile(geciciResim,file);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public static void tumSayfaScreenshhot(WebDriver driver,String raporIsmi){
+        //1- obje
+        TakesScreenshot tss = (TakesScreenshot) driver;
+
+        //2- ss kaydedelim (File)
+        File file = new File("target/screenshots/"+raporIsmi+"jpg");
+
+        //3- screenshootu alip gecici dosyaya kaydedn
+        File geciciResim = tss.getScreenshotAs(OutputType.FILE);
+
+        //4- Gecici resim dosyasini asil kaydetmek istedigimiz file'a kopyalayalim
+        try {
+            FileUtils.copyFile(geciciResim,file);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
 }

@@ -7,7 +7,6 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class C03_ReadExcel {
@@ -15,8 +14,8 @@ public class C03_ReadExcel {
     public void test01() throws IOException {
 
         // gerekli ayarlamalari yapip ulkeler excelindeki sayfa 1 'e gidin
-        String dosyaYolu = "src/test/java/tests/day16_webTables_exelOtomasyon/ulkeler.xlsx";
-        FileInputStream fileInputStream = new FileInputStream(dosyaYolu);
+     String dosyaYolu = "src/test/java/tests/day16_webTables_exelOtomasyon/ulkeler.xlsx";
+       FileInputStream fileInputStream = new FileInputStream(dosyaYolu);
         Workbook workbook = WorkbookFactory.create(fileInputStream);
         Sheet sayfa1 = workbook.getSheet("Sayfa1");
 
